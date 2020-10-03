@@ -16,6 +16,7 @@ use App\Http\Controllers\RandomNumberController;
 |
 */
 
-Route::get('', [RandomNumberController::class, 'index']);
-Route::get('/generate', [RandomNumberController::class, 'create']);
-Route::get('/retrieve', [RandomNumberController::class, 'get']);
+Route::prefix('random-number')->group(function () {
+    Route::get('/generate', [RandomNumberController::class, 'create']);
+    Route::get('/retrieve/{obRandomNumber}', [RandomNumberController::class, 'get']);
+});

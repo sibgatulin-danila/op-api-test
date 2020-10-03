@@ -20,9 +20,6 @@ class RandomNumberController
 
     public function get(RandomNumber $obRandomNumber)
     {
-        if (!$obRandomNumber) {
-            return abort(404);
-        }
         return response()->json([
             'item' => $obRandomNumber,
         ]);

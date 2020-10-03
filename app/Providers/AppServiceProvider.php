@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\RandomNumber;
+use App\Observers\RandomNumberObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        RandomNumber::observe(RandomNumberObserver::class);
     }
 }
